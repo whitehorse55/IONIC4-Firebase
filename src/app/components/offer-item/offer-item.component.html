@@ -1,0 +1,12 @@
+<ion-item class="offer-item">
+  <ion-avatar>
+    <img src="{{ offer.companyAvatar ? offer.companyAvatar : 'assets/img/app_logo.png' }}" />
+  </ion-avatar>
+  <div class="company_details">
+    <h5>{{ offer.companyName }}</h5>
+    <span>{{ offer.description }}</span>
+  </div>
+
+  <ion-icon name='ios-arrow-forward' slot="end"></ion-icon>
+
+</ion-item>

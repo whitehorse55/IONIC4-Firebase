@@ -1,0 +1,31 @@
+<div>
+    <ion-slides pager="true" id="imageSlide">
+      <ion-slide *ngFor="let image of mOffer?.media">
+        <img src="{{ image }}" />
+      </ion-slide>
+    </ion-slides>
+
+    <ion-card-content>
+      <p>{{ mOffer?.description }}</p>
+    </ion-card-content>
+
+    <ion-row class="social-bar">
+      <ion-col size="2">
+        <button ion-button icon-left small (click)="share()">
+          <ion-icon name="md-share"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col size="2">
+        <button ion-button icon-left small (click)="changeFavorite()">
+          <ion-icon name="md-heart" [color]="isFavorite ? 'primary' : 'dark'"></ion-icon>
+          {{ countFavorite ? countFavorite : 0 }}
+        </button>
+      </ion-col>
+      <ion-col size="2">
+        <button ion-button icon-left small (click)="changeOfferViews()">
+          <ion-icon name="ios-eye" [color]="isOfferViews ? 'primary' : 'dark'"></ion-icon>
+          {{ countOfferViews ? countOfferViews : 0 }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>

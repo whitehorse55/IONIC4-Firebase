@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">{{ title }}</ion-text>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" (ionSlideDidChange)="pageChanged()">
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let sector of sectorsarray; let i = index; " size="4">
+            <ion-button size="large" expand="fill" fill="clear" (click)="clickSector(sector)">
+              <img src="assets/img/{{sector}}.png">
+              <ion-icon *ngIf="selectedSectors.includes(sector)" class="sector-selector" ios="ios-checkmark-circle"
+                md="md-checkmark-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" padding>
+            <ion-item>
+              <ion-label color="dark">City</ion-label>
+              <ion-select [selectedText]="selectedCity" [(ngModel)]="selectedCity">
+                <ion-select-option value="New York">New York</ion-select-option>
+                <ion-select-option value="Los Angeles">Los Angeles</ion-select-option>
+                <ion-select-option value="London">London</ion-select-option>
+                <ion-select-option value="Paris">Paris</ion-select-option>
+                <ion-select-option value="São Paulo">São Paulo</ion-select-option>
+                <ion-select-option value="Tokyo">Tokyo</ion-select-option>
+                <ion-select-option value="New Delhi">New Delhi</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button shape="round" expand="full" color="secondary" (click)="gotoHome()">
+              I'm ready
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

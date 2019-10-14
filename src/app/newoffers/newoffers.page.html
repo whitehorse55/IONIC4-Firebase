@@ -1,0 +1,13 @@
+<ion-toolbar>
+  <ion-searchbar [(ngModel)]="searchKey" (ionChange)="searchItems()"></ion-searchbar>
+</ion-toolbar>
+
+<ion-content>
+  <ion-card *ngFor="let item of filterdOffer">
+    <app-offer-item [offer]="item"></app-offer-item>
+  </ion-card>
+
+  <ion-fab-button id="newOffer" *ngIf="user != null && user.type == 'company'" color="primary" routerLink="/offerpublication" routerDirection="forward">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-content>

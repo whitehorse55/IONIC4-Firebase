@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/trade"></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar [(ngModel)]="searchKey" (ionChange)="searchItems()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let offer of filterdOffer">
+    <ion-item no-padding>
+      <ion-avatar>
+        <img src="{{ companyData.avatar ? companyData.avatar : 'assets/img/app_logo.png' }}" />
+      </ion-avatar>
+      <div class="company_details">
+        <h2>{{ companyData.name }}</h2>
+      </div>
+
+      <ion-icon *ngIf="!isFollow" name='ios-add-circle-outline' slot="end" (click)="changeFollow()"></ion-icon>
+      <ion-icon *ngIf="isFollow" name='ios-remove-circle-outline' slot="end" (click)="changeFollow()"></ion-icon>
+
+    </ion-item>
+    <app-trade-item-detail [offer]="offer"></app-trade-item-detail>
+  </ion-card>
+</ion-content>

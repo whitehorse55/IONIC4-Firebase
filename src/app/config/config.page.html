@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title>Config</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item (click)="gotoCities()">
+    <div>Chagne City</div>
+    <ion-icon name='ios-arrow-forward' slot="end"></ion-icon>
+  </ion-item>
+  <ion-item (click)="gotoSectorUpdates()">
+    <div>Favorite Sectors</div>
+    <ion-icon name='ios-arrow-forward' slot="end"></ion-icon>
+  </ion-item>
+  <ion-item (click)="gotoFavoriteTrades()">
+    <div>Favorite Trades</div>
+    <ion-icon name='ios-arrow-forward' slot="end"></ion-icon>
+  </ion-item>
+  <ion-item (click)="logout()">
+    <div>Log out</div>
+    <ion-icon name='ios-arrow-forward' slot="end"></ion-icon>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "535388546940",
+    "firebase_url": "https://offerbook-f6551.firebaseio.com",
+    "project_id": "offerbook-f6551",
+    "storage_bucket": "offerbook-f6551.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535388546940:android:a205ef61273b650f19a6f9",
+        "android_client_info": {
+          "package_name": "com.offerbook.mob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535388546940-fojshgnioo7pj6hqul4bkj3tq6sn5b4q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.offerbook.mob",
+            "certificate_hash": "bdd417bf29a07c53a54b4d7c8efbb2e15113b03d"
+          }
+        },
+        {
+          "client_id": "535388546940-orpqs76g6g9albdfeuunprbbi9lavej4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5BK8_i9c8RBB65HEwe1kQzyc4_tw9zWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535388546940-orpqs76g6g9albdfeuunprbbi9lavej4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

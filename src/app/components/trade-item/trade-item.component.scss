@@ -1,0 +1,59 @@
+ion-slide {
+  display: block !important;
+}
+ion-row {
+  ion-col {
+    padding: 0;
+    display: flex;
+    .button {
+      margin: 0;
+      text-transform: capitalize;
+      padding: 0 0.5em;
+      font-size: 1.4rem;
+    }
+    ion-note {
+      margin: auto;
+    }
+  }
+}
+ion-label {
+  display: flex;
+  justify-content: space-between;
+}
+ion-item {
+  padding: 8px;
+  .item-inner {
+    padding-right: 0;
+    ion-label {
+      margin: auto 0;
+      .company_details {
+        overflow: hidden;
+      }
+      .button {
+        width: 40px;
+      }
+    }
+  }
+}
+
+ion-card-content {
+  padding: 8px;
+  p {
+    text-align: left;
+  }
+}
+.company_details h2 {
+  margin-top: 8px;
+  margin-left: 5px;
+}
+#imageSlide img {
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.social-bar {
+  button {
+    background: transparent;
+  }
+  margin-bottom: 20px;
+}

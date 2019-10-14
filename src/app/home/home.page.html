@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="trade">
+        <ion-icon name="ios-home"></ion-icon>
+        <ion-label>Home</ion-label>
+        <ion-badge></ion-badge>
+      </ion-tab-button>
+
+      <ion-tab-button *ngIf="user.type == 'person'" tab="favorites">
+        <ion-icon name="md-heart"></ion-icon>
+        <ion-label>Favorite</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="newOffers">
+        <ion-icon name="ios-pricetags"></ion-icon>
+        <ion-label>New Offers</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="config">
+        <ion-icon name="ios-settings"></ion-icon>
+        <ion-label>Config</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

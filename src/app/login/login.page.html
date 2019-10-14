@@ -1,0 +1,95 @@
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="theme-bg"></div>
+  <div class="auth-content">
+
+      <ion-row>
+        <ion-col size = "4"></ion-col>
+        <ion-col size = "4">
+          <ion-img class="logo" width-100 height-100  src="assets/img/app_logo.png"></ion-img>
+        </ion-col >
+        <ion-col size = "4"></ion-col>
+      </ion-row>
+
+      <!-- <ion-row text-center>
+        <ion-col size="12">
+            <h4 no-margin>
+                <ion-text color="light" class="fw700">
+                  Login
+                </ion-text>
+              </h4>
+        </ion-col>
+      </ion-row> -->
+
+
+    <!-- Login form -->
+    <form [formGroup]="onLoginForm" class="list-form" >
+      <ion-item no-padding >
+        <ion-icon name="mail" item-start></ion-icon>
+        <ion-input type="email" formControlName="email" placeholder="Username" item-end></ion-input>
+      </ion-item >
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.email">
+          <div class="error-message" *ngIf="onLoginForm.get('email').hasError(validation.type) && (onLoginForm.get('email').dirty || onLoginForm.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item no-padding>
+        <ion-icon name="lock" item-start></ion-icon>
+        <ion-input  type="password" formControlName="password" placeholder="Password" item-end></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.password">
+          <div class="error-message" *ngIf="onLoginForm.get('password').hasError(validation.type) && (onLoginForm.get('password').dirty || onLoginForm.get('password').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </form>
+
+    <p text-right tappable (click)="forgotPass()" class="paz">
+      <ion-text color="light">
+        <strong>Forgot Password?</strong>
+      </ion-text>
+    </p>
+
+    <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="goToHome()" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Signin
+      </ion-button>
+
+      <p text-center>
+        <ion-text color="light">
+          Or Signin with:
+        </ion-text>
+      </p>
+
+      <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="12">
+            <ion-button shape="round" expand="full" color="primary-shade">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+              &nbsp;&nbsp;Sign In with Facebook
+            </ion-button>
+          </ion-col>
+          <ion-col size="12">
+            <app-google-login (userInfo)="socialUserInfo($event)"></app-google-login>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span (click)="goToRegister()" class="paz" tappable>
+        <ion-text color="light">
+          New here? <strong>Sign Up</strong>
+        </ion-text>
+      </span>
+    </div>
+
+  </div>
+</ion-content>

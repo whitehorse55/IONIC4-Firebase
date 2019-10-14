@@ -1,0 +1,19 @@
+<div [hidden]="!(offerList?.length > 0)">
+  <ion-item no-padding>
+    <ion-avatar (click)="gotoPrivateWall()">
+      <img src="{{ companyData.avatar ? companyData.avatar : 'assets/img/app_logo.png' }}" />
+    </ion-avatar>
+    <div class="company_details" (click)="gotoPrivateWall()">
+      <h2>{{ companyData.name }}</h2>
+    </div>
+
+    <ion-icon *ngIf="!isFollow" name='ios-add-circle-outline' slot="end" (click)="changeFollow()"></ion-icon>
+    <ion-icon *ngIf="isFollow" name='ios-remove-circle-outline' slot="end" (click)="changeFollow()"></ion-icon>
+
+  </ion-item>
+  <ion-slides pager="true" id="promotionSlide">
+    <ion-slide *ngFor="let offer of offerList">
+      <app-trade-item-detail [offer]="offer"></app-trade-item-detail>
+    </ion-slide>
+  </ion-slides>
+</div>

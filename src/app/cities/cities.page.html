@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/config"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cities</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" padding>
+        <ion-item>
+          <ion-label color="dark">City</ion-label>
+          <ion-select [selectedText]="selectedCity" [(ngModel)]="selectedCity">
+            <ion-select-option value="New York">New York</ion-select-option>
+            <ion-select-option value="Los Angeles">Los Angeles</ion-select-option>
+            <ion-select-option value="London">London</ion-select-option>
+            <ion-select-option value="Paris">Paris</ion-select-option>
+            <ion-select-option value="São Paulo">São Paulo</ion-select-option>
+            <ion-select-option value="Tokyo">Tokyo</ion-select-option>
+            <ion-select-option value="New Delhi">New Delhi</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button shape="round" expand="full" color="secondary" (click)="update()">
+          Update City
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

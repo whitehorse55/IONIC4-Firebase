@@ -1,0 +1,49 @@
+<ion-content>
+  <form [formGroup]="onUserSignupForm" class="list-form" (ngSubmit)="signup()">
+    <ion-item no-padding>
+      <ion-icon name="person" item-start></ion-icon>
+      <ion-input type="email" formControlName="username" placeholder="Username" item-end></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validationMessages.username">
+        <div class="error-message"
+          *ngIf="onUserSignupForm.get('username').hasError(validation.type) && (onUserSignupForm.get('username').dirty || onUserSignupForm.get('username').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item no-padding>
+      <ion-icon name="mail" item-start></ion-icon>
+      <ion-input type="email" formControlName="email" placeholder="Email" item-end></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validationMessages.email">
+        <div class="error-message"
+          *ngIf="onUserSignupForm.get('email').hasError(validation.type) && (onUserSignupForm.get('email').dirty || onUserSignupForm.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item no-padding>
+      <ion-icon name="lock" item-start></ion-icon>
+      <ion-input type="password" formControlName="password" placeholder="Password" item-end></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validationMessages.password">
+        <div class="error-message"
+          *ngIf="onUserSignupForm.get('password').hasError(validation.type) && (onUserSignupForm.get('password').dirty || onUserSignupForm.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-button icon-left size="medium" expand="full" shape="round" color="dark" type="submit"
+      [disabled]="!onUserSignupForm.valid" tappable>
+      <ion-icon name="log-in"></ion-icon>
+      Signup
+    </ion-button>
+  </form>
+
+</ion-content>
